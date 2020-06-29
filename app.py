@@ -12,8 +12,7 @@ if not (len(names) > 1):
     print("Please input your full and last name.")
     sys.exit()
 
-first_Name = names[0][2]
+first_Name = names[0][:3]
 three_letters_surname = names[-1][:3]
-number = '{:03d}'.format(random.randrange(1, 999))
 username = (first_Name + three_letters_surname + random.choice(elvnames))
 print(username)
