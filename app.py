@@ -13,8 +13,8 @@ import random
 import string
 
 ####### FUNCTION TWO - NAME GENERATOR
-def namegen():
-    names = input("Please enter your name: ").split(" ") ##This is going to be a get request
+def namegen(input):
+    names = input.split(" ") ##This is going to be a get request
     orcnames = ['uk', 'guk', 'keg', 'rag', 'kha', 'rok', 'zok', 'huk', 'rik']
     elvnames = ['iros', 'ilir', 'tris', 'aren', 'ana', 'ina', 'enys', 'ona', 'dir']
     
@@ -22,7 +22,7 @@ def namegen():
         print("Please input your full and last name.")
         print("\n")
         print("Please try again")
-        namegen()
+        namegen('Emiljano Kurbiba')
         
     first_Name = names[0][:2]
     three_letters_surname = names[-1][:3]
@@ -31,4 +31,4 @@ def namegen():
     #Perhaps seperate routes that can be called from home route & html. 
     print(username.upper())
 
-namegen()
+namegen('Emiljano Kurbiba')
