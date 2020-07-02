@@ -43,11 +43,8 @@ def titlegen():
 
     title = (random.choice(articles) + " " + random.choice(descriptive) + " " + random.choice(objective)) 
 
-    print(title.upper())
-
+    print(title.upper() + '\n')
 titlegen()
-
-print('\n')
 
 ####### FUNCTION FOUR - SHORT STORY GENERATOR INCLUDING TWO AND THREE
 
