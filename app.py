@@ -13,8 +13,8 @@ import random
 import sys
 
 ####### FUNCTION TWO - NAME GENERATOR
-def namegen():
-    names = input("Please enter your name: ").split(" ") ##This is going to be a get request
+def namegen(input):
+    names = input.split(" ") ##This is going to be a get request
     orcnames = ['uk', 'guk', 'keg', 'rag', 'kha', 'rok', 'zok', 'huk', 'rik']
     elvnames = ['iros', 'ilir', 'tris', 'aren', 'ana', 'ina', 'enys', 'ona', 'dir']
     
@@ -31,7 +31,7 @@ def namegen():
     #Perhaps seperate routes that can be called from home route & html. 
     print(username.upper())
 
-namegen()
+namegen('Emiljano Kurbiba')
 
 ####### FUNCTION THREE - TITLE GENERATOR
 def titlegen():
