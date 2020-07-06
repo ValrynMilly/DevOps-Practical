@@ -20,7 +20,7 @@ def titlegen_post():
     objective = ['One', 'Demi-God', 'Giant', 'Berzerker', 'Hunter', 'Wizard', 'Born', 'God'] 
     if form.is_submitted():
         title_generated = (random.choice(articles) + " " + random.choice(descriptive) + " " + random.choice(objective)) 
-        return title_generated
+        return title_generated.upper()
 
 
 if __name__ == '__main__':
