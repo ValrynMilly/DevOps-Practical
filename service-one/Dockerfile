@@ -1,6 +1,6 @@
 FROM ubuntu:latest
   
-COPY ./service-one.py service-one.py
+COPY . .
 
 RUN apt-get update -y
 RUN apt-get install python3 -y
