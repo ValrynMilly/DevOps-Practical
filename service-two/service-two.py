@@ -1,5 +1,4 @@
 from flask import Flask, url_for, render_template, redirect, request
-from forms import namegen
 import string
 import random
 import requests
