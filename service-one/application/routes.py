@@ -20,4 +20,4 @@ def namegenform_post():
     form = namegen()
     if form.is_submitted():
         name = requests.get(servicetwo)
-        return name
+        return name.text
