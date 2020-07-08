@@ -1,5 +1,5 @@
 from flask import Flask, url_for, render_template, redirect, request
-
+import requests
 import string
 import random
 
@@ -15,4 +15,4 @@ def titlegen_post():
     return title_generated.upper()
 
 if __name__ == '__main__':
- app.run(debug=True, host='127.0.0.3')
+app.run(debug=True, port=5002 host='0.0.0.0')

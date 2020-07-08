@@ -18,4 +18,4 @@ def titlegen_post():
     return shortstory.upper()
 
 if __name__ == '__main__':
- app.run(debug=True, host='127.0.0.4')
+ app.run(debug=True, port=5003 host='0.0.0.0')
