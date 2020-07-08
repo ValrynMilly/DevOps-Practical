@@ -1,6 +1,6 @@
 from flask import Flask, url_for, render_template, redirect, request
 
-from forms import namegen
+from application.forms import namegen
 import requests
 import string
 import random
