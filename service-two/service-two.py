@@ -4,7 +4,7 @@ import random
 import requests
 
 app = Flask(__name__)
-serviceone = 'http://localhost:5000'
+serviceone = 'http://service-one:5000'
 app.config['SECRET_KEY']='Thisissecret'
 
 @app.route('/')

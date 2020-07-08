@@ -5,9 +5,9 @@ import requests
 import string
 import random
 
-servicetwo = 'http://localhost:5001'
-servicethree = 'http://localhost:5002'
-servicefour = 'http://localhost:5003'
+servicetwo = 'http://service-two:5001'
+servicethree = 'http://service-three:5002'
+servicefour = 'http://service-four:5003'
 
 
 @app.route('/')
