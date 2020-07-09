@@ -10,7 +10,7 @@ servicetwo = 'http://service-two:5001'
 servicethree = 'http://service-three:5002'
 servicefour = 'http://service-four:5003'
 
-app.config['SECRET_KEY']='Thisisanothersupersupersupersecret'
+app.config['SECRET_KEY'] = getenv("SECRET_KEY")
 
 @app.route('/')
 def namegenform():
