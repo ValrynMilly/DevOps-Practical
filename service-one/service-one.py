@@ -20,10 +20,8 @@ def namegenform():
 def namegenform_post():
     form = namegen()
     if form.validate_on_submit():
-        name = requests.get(servicetwo)
-        title = requests.get(servicethree)
-        data = [name.text, title.text]
-        result = requests.post(servicetwo, name.text)
+        story = requests.get(servicefour)
+        result = requests.post(servicefour, story.text)
         return result.text
 
 
