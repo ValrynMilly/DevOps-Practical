@@ -9,6 +9,7 @@ services:
       protocol: tcp
     environment: 
       SECRET_KEY: ${SECRET_KEY}
+      SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
   service-two:
     image: valryn/devops-practical-servicetwo
     build: ./service-two
@@ -33,9 +34,6 @@ services:
   mysql:
     image: valryn/fantasygensql
     build: ./db 
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: fantasygendb
     ports:
     - target: 3306
       published: 3306
