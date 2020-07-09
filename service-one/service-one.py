@@ -1,14 +1,15 @@
 from flask import Flask, url_for, render_template, redirect, request
-from application import app
 from forms import namegen
 import requests
 import string
 import random
 
+app = Flask(__name__)
 servicetwo = 'http://service-two:5001'
 servicethree = 'http://service-three:5002'
 servicefour = 'http://service-four:5003'
 
+app.config['SECRET_KEY']='Thisisanothersupersupersupersecret'
 
 @app.route('/')
 def namegenform():
