@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, redirect, request
+from flask import Flask, url_for, render_template, redirect, request, Response
 import string
 import random
 import requests
@@ -7,17 +7,14 @@ app = Flask(__name__)
 serviceone = 'http://service-one:5000/'
 app.config['SECRET_KEY']='Thisissecret'
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def namegenform_post():
     orcnames = ['uk', 'guk', 'keg', 'rag', 'kha', 'rok', 'zok', 'huk', 'rik']
     #orc names will be their own route soon
+    midname = ['Aafke', 'Aaliyah', 'Ada', 'Adilya', 'Brynne', 'Britt', 'Cynthia', 'Halle', 'Ilana', 'Iris', 'Aaron', 'Adam', 'Alexander', 'Anton', 'Meldarion', 'Elijah', 'Eithelonnen']
     elvnames = ['iros', 'ilir', 'tris', 'aren', 'ana', 'ina', 'enys', 'ona', 'dir']
-    requestfirst = requests.get(serviceone, params='first_name')
-    requestlast = requests.get(serviceone, params='last_name')
-    genfirst = requestfirst[:2]
-    gensecond = requestlast[:3]
-    username = (random.choice(elvnames) + genfirst + gensecond + random.choice(elvnames)) 
-    return username.upper()
+    username = (random.choice(elvnames) + random.choice(midname) + random.choice(elvnames))
+    return Response(username, mimetype='type/plain')
 
 
 if __name__ == '__main__':
