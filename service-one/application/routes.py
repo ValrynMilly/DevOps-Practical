@@ -1,6 +1,7 @@
 from flask import Flask, url_for, render_template, redirect, request, Response
 from application import app
 from application.forms import namegen
+from os import getenv
 from application.models import Registerfantasy
 import requests
 import string
