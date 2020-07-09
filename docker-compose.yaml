@@ -7,6 +7,8 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
+    environment: 
+      SECRET_KEY: ${SECRET_KEY}
   service-two:
     image: valryn/devops-practical-servicetwo
     build: ./service-two
