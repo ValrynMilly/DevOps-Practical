@@ -1,5 +1,5 @@
 from flask import Flask, url_for, render_template, redirect, request, Response
-from application import app
+from application import app, db
 from application.forms import namegen
 from os import getenv
 from application.models import Registerfantasy
