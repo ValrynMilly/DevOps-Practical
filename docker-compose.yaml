@@ -33,7 +33,7 @@ services:
       protocol: tcp
   mysql:
     image: valryn/fantasygensql
-    build: ./db 
+    build: ./service-one 
     ports:
     - target: 3306
       published: 3306
