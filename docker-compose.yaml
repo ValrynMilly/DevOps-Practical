@@ -38,6 +38,11 @@ services:
     - target: 3306
       published: 3306
       protocol: tcp
+    environment: 
+      SECRET_KEY: ${SECRET_KEY}
+      SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
+    depends_on: 
+      - service-one 
   nginx:
     image: nginx:latest
     ports:
