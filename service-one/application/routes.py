@@ -21,6 +21,11 @@ def namegenform():
 def namegenform_post():
     form = namegen()
     if form.validate_on_submit():
+        name = requests.get(servicetwo)
+        title = requests.get(servicethree)
         story = requests.get(servicefour)
         result = requests.post(servicefour, story.text)
+        fresh_register = Registerfantasy(fan_name=name.text, fan_title=title.text, fan_story=story.text)
+        db.session.add(fresh_register)
+        db.session.commit()
         return result.text
