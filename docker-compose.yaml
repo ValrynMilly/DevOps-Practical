@@ -1,24 +1,28 @@
 version: '3.7'
 services: 
   service-one:
+    image: valryn/devops-practical-serviceone
     build: ./service-one
     ports: 
     - target: 5000
       published: 5000
       protocol: tcp
   service-two:
+    image: valryn/devops-practical-servicetwo
     build: ./service-two
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
   service-three:
+    image: valryn/devops-practical-servicethree
     build: ./service-three
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
   service-four:
+    image: valryn/devops-practical-servicefour
     build: ./service-four
     ports:
     - target: 5003
