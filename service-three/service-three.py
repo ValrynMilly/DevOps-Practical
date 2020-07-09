@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, redirect, reques, Response
+from flask import Flask, url_for, render_template, redirect, request, Response
 import requests
 import string
 import random

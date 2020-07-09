@@ -15,7 +15,7 @@ def titlegen_post():
     instrument = ['a pinkie', 'a pencil', 'a hammer', 'a bow', 'lightning', 'fire', 'a hunt'] 
     shortstory = (random.choice(where) + " " + name + " " + title +" Once " + random.choice(action)+ " " + str(random.randint(1, 3000)) + " MEN WITH " + random.choice(instrument)) 
     #so USERNAME & TITLE will be post request sent from service one which will be read then generated
-    return Reponse(shortstory, mimetype='text/plain')
+    return Response(shortstory, mimetype='text/plain')
 
 if __name__ == '__main__':
  app.run(host='0.0.0.0', port=5003, debug=True)
