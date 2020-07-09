@@ -23,7 +23,7 @@ def namegenform_post():
         name = requests.get(servicetwo)
         title = requests.get(servicethree)
         data = [name.text, title.text]
-        result = requests.post(servicefour, data)
+        result = requests.post(servicetwo, name.text)
         return result.text
 
 

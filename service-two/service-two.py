@@ -4,10 +4,9 @@ import random
 import requests
 
 app = Flask(__name__)
-serviceone = 'http://service-one:5000/'
 app.config['SECRET_KEY']='Thisissecret'
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods = ['GET', 'POST'])
 def namegenform_post():
     orcnames = ['uk', 'guk', 'keg', 'rag', 'kha', 'rok', 'zok', 'huk', 'rik']
     #orc names will be their own route soon
