@@ -1,4 +1,4 @@
-ssh -t jenkins@jenkins<< EOF
+ssh -t jenkins@jenkinsvm<< EOF
 git clone https://github.com/ValrynMilly/DevOps-Practical.git
 cd /home/jenkins/DevOps-Practical
 git checkout Jenkins
