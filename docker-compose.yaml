@@ -39,8 +39,8 @@ services:
       published: 3306
       protocol: tcp
     environment: 
-      SECRET_KEY: ${SECRET_KEY}
-      SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     depends_on: 
       - service-one 
   nginx:
