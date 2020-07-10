@@ -6,5 +6,5 @@ cd DevOps-Practical
 
 sudo docker volume create fantasygens
 docker stack rm namegenstack
-sudo env password=${password} DATABASE_URI=${DATABASE_URI} docker stack deploy --compose-file docker-compose.yaml namegenstack
+sudo docker stack deploy -c docker-compose.yaml namegenstack env SQLALCHEMY_DATABASE_URI='mysql+pymysql://root:Le0535892@35.242.172.253/fantasygendb' MYSQL_DATABASE=mysql+pymysql://root:Le0535892@35.242.172.253/fantasygendb MYSQL_ROOT_PASSWORD=Le0535892
 EOF
