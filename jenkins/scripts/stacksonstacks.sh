@@ -1,5 +1,5 @@
 sudo su - jenkins << EOF
-rm -r mydir
+rm -r DevOps-Practical
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 
 cd DevOps-Practical
