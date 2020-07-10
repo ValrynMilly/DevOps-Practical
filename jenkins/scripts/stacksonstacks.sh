@@ -1,8 +1,8 @@
 sudo su - jenkins << EOF
-
+rm -r mydir
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 
-cd /home/jenkins/DevOps-Practical
+cd DevOps-Practical
 
 sudo docker volume create fantasygens
 
