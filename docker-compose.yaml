@@ -44,7 +44,7 @@ services:
     depends_on: 
       - service-one 
   nginx:
-    image: nginx:latest
+    image: valryn/devops-practical-nginx
     ports:
     - target: 80
       published: 80
