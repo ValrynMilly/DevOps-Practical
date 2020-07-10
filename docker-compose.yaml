@@ -44,7 +44,7 @@ services:
     depends_on: 
       - service-one
     volumes: 
-      - type: volumes
+      - type: volume
         source: fantasygens
         target: /var/lib/mysql
   nginx:
