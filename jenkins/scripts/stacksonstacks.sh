@@ -1,7 +1,6 @@
 sudo su - jenkins << EOF
 
-git clone https://github.com/ValrynMilly/DevOps-Practical.git
-git checkout Jenkins
+git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 
 cd /home/jenkins/DevOps-Practical
 
