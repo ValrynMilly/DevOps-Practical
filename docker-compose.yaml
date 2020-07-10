@@ -44,7 +44,7 @@ services:
     depends_on: 
       - service-one 
   nginx:
-    image: valryn/devops-practical-nginx
+    image: nginx:latest
     ports:
     - target: 80
       published: 80
@@ -53,5 +53,5 @@ services:
       - service-one
     volumes:
     - type: bind
-      source: ./nginx/nginx.conf
+      source: /home/ekurbiba/DevOps-Practical/nginx/nginx.conf
       target: /etc/nginx/nginx.conf
