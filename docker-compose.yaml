@@ -42,7 +42,11 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     depends_on: 
-      - service-one 
+      - service-one
+    volumes: 
+      - type: volumes
+        source: fantasygens
+        target: /var/lib/mysql
   nginx:
     image: nginx:latest
     ports:
@@ -55,3 +59,5 @@ services:
     - type: bind
       source: /home/ekurbiba/DevOps-Practical/nginx/nginx.conf
       target: /etc/nginx/nginx.conf
+volumes: 
+  fantasygens:
