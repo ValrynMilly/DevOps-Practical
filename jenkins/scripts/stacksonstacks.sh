@@ -1,4 +1,4 @@
-sudo su - jenkins << EOF
+ssh projectmanager << EOF
 rm -r DevOps-Practical
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 
