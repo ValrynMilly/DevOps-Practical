@@ -11,12 +11,8 @@ class TestBase(TestCase):
 
 class TestResponse(TestBase):
     def test_homepage(self):
-        valuetoreturn = "irosAafkeilir"
+        nametoreturn = "irosAafkeilir"
         with patch('application.routes.requests.get') as mock_get:
             # getting successful response by 200 code
             mock_get.return_value.status_code = 200
-            mock_get.return_value = valuetoreturn
-            
-            response = self.client.post(url_for('/', data = ""))
-            
-            self.assertIn(valuetoreturn, response.data)
+            mock_get.return_value = nametoreturn
