@@ -14,6 +14,6 @@ rm -r DevOps-Practical
 #clone project
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 #navigate to ansible playboook location
-cd DevOps-Practical/ansible
+cd DevOps-Practical
 #Running inventory & playbook
-ansible-playbook -i inventory playbook.yaml
+ansible-playbook -i ansible/inventory ansible/playbook.yaml
