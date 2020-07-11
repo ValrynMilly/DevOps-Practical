@@ -1,18 +1,24 @@
 from unittest.mock import patch
 from flask import url_for
+import requests_mock
 from flask_testing import TestCase
-
-from app import app
+from application import routes
+from application import app
 
 class TestBase(TestCase):
     def create_app(self):
         return app
 
-class TestGen(TestBase):
-    def test_generate(self):
-        with patch('requests.get') as g:
-            g.return_value = "Adairisaren"
-            with patch('requests.post') as p:
-                p.return_value.text = "A Omnipotent Born"
-                response = self.client.get('/')
-                self.assertIn(b'Adairisaren A Omnipotent Born', response.data)
+class TestResponse(TestBase):
+    def test_homepage(self):
+        valuetoreturn = "irosAafkeilir"
+        with patch('application.routes.requests.get') as mock_get:
+            # getting successful response by 200 code
+            mock_get.return_value.status_code = 200
+            mock_get.return_value = valuetoreturn
+            
+            obj = routes.namegenform_post()
+            response = obj.get
+            
+        self.assertIn(response.status_code, 200)
+        self.assertIn(response.text(), valuetoreturn)
