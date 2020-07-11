@@ -9,9 +9,5 @@ sudo apt install python3 -y
 sudo apt install python3-pip -y
 # Simply installing ansible on current user
 pip3 install --user ansible
-# Removing local project directory
-rm -r DevOps-Practical
-#clone project
-git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 #Running inventory & playbook
 ansible-playbook -i inventory playbook.yaml
