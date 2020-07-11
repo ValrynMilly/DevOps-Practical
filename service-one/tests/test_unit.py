@@ -19,4 +19,4 @@ class TestResponse(TestBase):
             
             response = self.client.post('/')
             
-            self.assertIn(response.result, valuetoreturn)
+            self.assertIn(response, valuetoreturn)
