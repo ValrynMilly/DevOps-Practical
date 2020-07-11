@@ -19,5 +19,4 @@ class TestResponse(TestBase):
             
             response = routes.namegenform_post()
             
-        self.assertIn(response.status_code, 200)
-        self.assertIn(response.text(), valuetoreturn)
+        self.assertIn(response.text, valuetoreturn)
