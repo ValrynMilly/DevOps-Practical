@@ -13,7 +13,5 @@ pip3 install --user ansible
 rm -r DevOps-Practical
 #clone project
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
-#navigate to ansible playboook location
-cd DevOps-Practical
 #Running inventory & playbook
-ansible-playbook -i ansible/inventory ansible/playbook.yaml
+ansible-playbook -i inventory playbook.yaml
