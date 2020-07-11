@@ -17,8 +17,7 @@ class TestResponse(TestBase):
             mock_get.return_value.status_code = 200
             mock_get.return_value = valuetoreturn
             
-            obj = routes.namegenform_post()
-            response = obj.get
+            response = routes.namegenform_post().get
             
         self.assertIn(response.status_code, 200)
         self.assertIn(response.text(), valuetoreturn)
