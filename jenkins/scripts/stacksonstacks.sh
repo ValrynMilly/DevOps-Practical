@@ -1,3 +1,10 @@
+# Removes the Project directory if exests
+# Clones project directory & switches to Branch Jenkins
+# Navigates to Project Directory
+# Creates Fantasygens volume for the database
+# removes current stack if already up
+# sleeps for 10 seconds just so the network is fully removed
+# fully launches the stack
 ssh projectmanager << EOF
 rm -r DevOps-Practical
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
