@@ -17,6 +17,6 @@ class TestResponse(TestBase):
             mock_get.return_value.status_code = 200
             mock_get.return_value = valuetoreturn
             
-            response = self.client.post('/')
+            response = self.client.post(url_for('/', data = ""))
             
-            self.assertIn(response, valuetoreturn)
+            self.assertIn(valuetoreturn, response.data)
