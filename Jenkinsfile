@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('Ansible Install & Verify'){
       steps{
-        sh "bash Jenkins/scripts/ansibleinstallverify.sh"
+        sh "bash jenkins/scripts/ansibleinstallverify.sh"
       }
     }  
     stage('Stack Set-up'){
