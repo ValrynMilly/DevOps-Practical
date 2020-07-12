@@ -34,7 +34,7 @@ class TestGenerate(TestBase):
             g.return_value.text = "irosaafkeilir"
             with patch('requests.get') as p:
                 p.return_value.text = " THE OMNIBENEVOLENT BERZERKER"
-                with patch('requests.post') as d:
+                with patch('requests.get') as d:
                     d.return_value.text = "ONCE ANNIHILATED 1089 MEN WITH FIRE"
-                response = self.client.post('/')
+                response = self.client.get('/')
                 self.assertIn(b'IN A BAR irosaafkeilir THE OMNIBENEVOLENT BERZERKER ONCE ANNIHILATED 1089 MEN WITH FIRE', response.data)
