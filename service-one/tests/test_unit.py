@@ -13,7 +13,6 @@ class TestBase(TestCase):
 class TestGenerate(TestBase):
     def test_ifpagefound(self):
         with patch('requests.get') as mock_request:
-            servicetwo = 'http://service-two:5001'
-            mock_request.return_value.result = "Fake content"
+            mock_request.return_value.text = "ilir"
             response = namegenform_post()
-            self.assertNotNone(response.result)
+            self.assertNotNone(response.result.text)
