@@ -9,10 +9,11 @@ class TestBase(TestCase):
     def create_app(self):
         return app
 
-class TestResponse(TestBase):
+class TestGenerate(TestBase):
     def test_homepage(self):
-        nametoreturn = "irosAafkeilir"
-        with patch('application.routes.requests.get') as mock_get:
+        with requests_mock.mock() as mock_get:
             # getting successful response by 200 code
-            mock_get.return_value.status_code = 200
-            mock_get.return_value = nametoreturn
+            mock_get.get("http://service-two:5001", text="irosAafkeilir")
+            response = self.client.post(url_for('namegenform_post'))
+            
+            self.assertIn(b'irosAafkeilir', response)
