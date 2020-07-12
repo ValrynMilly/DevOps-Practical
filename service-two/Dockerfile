@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-  
+
 COPY . .
 
 ARG SECRET_KEY
