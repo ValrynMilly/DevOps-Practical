@@ -7,6 +7,7 @@ import requests
 import string
 import random
 
+serviceone = 'http://service-one:5000'
 servicetwo = 'http://service-two:5001'
 servicethree = 'http://service-three:5002'
 servicefour = 'http://service-four:5003'
