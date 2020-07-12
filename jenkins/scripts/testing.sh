@@ -1,6 +1,6 @@
 ssh jenkins@projectmanager << EOF
-cd DevOps-Practical
-git pull
+sudo rm -rf DevOps-Practical
+git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 echo $TEST_DB_URI
 cd service-one
 sudo env TEST_DB_URI=${TEST_DB_URI} python3 -m pytest --cov application --cov-report term-missing
