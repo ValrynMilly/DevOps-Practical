@@ -29,12 +29,15 @@ class TestGenerate(TestBase):
         response = self.client.get('/')
         self.assertIn(b"submit", response.data)
 
-    def test_generate(self):
-        with patch('requests.get') as g:
-            g.return_value.text = "irosaafkeilir"
-            with patch('requests.get') as p:
-                p.return_value.text = " THE OMNIBENEVOLENT BERZERKER"
-                with patch('requests.get') as d:
-                    d.return_value.text = "ONCE ANNIHILATED 1089 MEN WITH FIRE"
-                response = self.client.get('/')
-                self.assertIn(b'IN A BAR irosaafkeilir THE OMNIBENEVOLENT BERZERKER ONCE ANNIHILATED 1089 MEN WITH FIRE', response.data)
+    def test_generatename(self):
+        with patch('requests.get') as p:
+            p.return_value.text = "ilir"
+            response = self.client.post('/')
+            self.assertIn(b'ilir', response.data)
+
+    def test_generatetitle(self):
+        with patch('requests.get') as x:
+            x.return_value.text = "A OMNIPOTENT BORN"
+            response = self.client.post('/')
+            self.assertIn(b'A OMNIPOTENT BORN', response.data)
+            
