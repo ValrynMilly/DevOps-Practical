@@ -5,7 +5,7 @@
 # removes current stack if already up
 # sleeps for 10 seconds just so the network is fully removed
 # fully launches the stack
-ssh projectmanager << EOF
+ssh jenkins@projectmanager << EOF
 sudo rm -rf DevOps-Practical
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 
