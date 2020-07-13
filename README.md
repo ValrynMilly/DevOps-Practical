@@ -36,7 +36,7 @@ Trello: [Found Here](https://trello.com/b/2yVzbztM)
 	- [Trello](#Trello)
 	- [Risk-Assessment](#Risk-Assessment)
 - [Issues-Faced](#Issues-Faced)
-- [Author][#Author]
+- [Author](#Author)
 
 # Tutorial
 
