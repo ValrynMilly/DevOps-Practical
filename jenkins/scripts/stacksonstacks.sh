@@ -11,9 +11,6 @@ git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 
 cd DevOps-Practical
 
-sudo docker-compose build
-sudo docker-compose push
-
 sudo docker volume create fantasygens
 docker stack rm namegenstack
 sleep 10
