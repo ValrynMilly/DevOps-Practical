@@ -1,0 +1,63 @@
+version: '3.7'
+services: 
+  service-one:
+    image: valryn/devops-practical-serviceone
+    build: ./service-one
+    ports: 
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    environment: 
+      SECRET_KEY: ${SECRET_KEY}
+      SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
+  service-two:
+    image: valryn/devops-practical-servicetwo
+    build: ./service-two
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+  service-three:
+    image: valryn/devops-practical-servicethree
+    build: ./service-three
+    ports:
+    - target: 5002
+      published: 5002
+      protocol: tcp
+  service-four:
+    image: valryn/devops-practical-servicefour
+    build: ./service-four
+    ports:
+    - target: 5003
+      published: 5003
+      protocol: tcp
+  mysql:
+    image: valryn/fantasygensql
+    build: ./service-one 
+    ports:
+    - target: 3306
+      published: 3306
+      protocol: tcp
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    depends_on: 
+      - service-one
+    volumes: 
+      - type: volume
+        source: fantasygens
+        target: /var/lib/mysql
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    depends_on: 
+      - service-one
+    volumes:
+    - type: bind
+      source: /home/ekurbiba/DevOps-Practical/nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+volumes: 
+  fantasygens:

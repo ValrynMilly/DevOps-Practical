@@ -1,0 +1,12 @@
+- hosts: all
+  become: true
+  roles:
+  - common
+- hosts: managers
+  become: true
+  roles:
+  - manager
+- hosts: workers
+  become: true
+  roles:
+  - worker
