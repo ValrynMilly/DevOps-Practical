@@ -5,11 +5,12 @@
 # removes current stack if already up
 # sleeps for 10 seconds just so the network is fully removed
 # fully launches the stack
-ssh jenkins@projectmanager << EOF
+ssh projectmanager << EOF
 sudo rm -rf DevOps-Practical
 git clone https://github.com/ValrynMilly/DevOps-Practical.git -b Jenkins
 
 cd DevOps-Practical
+sudo docker-compose pull
 
 sudo docker volume create fantasygens
 docker stack rm namegenstack
